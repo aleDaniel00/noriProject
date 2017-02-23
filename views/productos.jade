@@ -1,0 +1,33 @@
+extends layouts/header.jade
+
+block content
+			.page-data
+				a(href="/productos/logout") Logout
+				.data-btn
+					button(onClick="addProducto();") + Add
+				.data-table
+					table(border="1" cellpadding="7" cellspacing="7")
+						tr
+							//th(width="50px") No
+							th Nombre
+							th Descripion
+							th Precio
+							th Imagen
+							th(width="120px") Action
+							
+						if data.length == 0
+							tr
+								td(colspan="3") No hay productos
+						else
+							for producto in data
+								tr
+									//td=(i+1)
+									td=producto.nombre
+									td=producto.descripcion
+									td=producto.precio
+									td=producto.imagen
+									td
+										a.a-inside.edit(href="../productos/edit/#{producto.id}") Edit
+										a.a-inside.delete(href="../productos/delete/#{producto.id}") Delete
+
+			include layouts/footer.jade

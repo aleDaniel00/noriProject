@@ -1,0 +1,30 @@
+extends layouts/header.jade
+
+block content
+			.page-data
+			
+				form(method="post" action="/productos/add")
+					table(cellpadding="11")
+						tr
+							td.label Nombre del producto
+							td :
+								input(type="text" name="nombre" required)
+						tr
+							td.label(valign="top") Descripcion
+							td(valign="top") :
+								textarea(name="descripcion" required cols="30" rows="5")
+						tr
+							td.label Precio
+							td :
+								input(type="number" name="precio" required)
+						tr
+							td.label Imagen
+							td :
+								input(type="text" name="imagen" required)
+						tr
+							td.label
+							td
+								input(type="submit" name="submit" value="Save")
+								input(type="button" name="cancel" value="Cancel" class="cancel" onClick="cancelAdd()")
+							
+			include layouts/footer.jade
