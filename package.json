@@ -11,6 +11,11 @@
     "express-myconnection": "1.0.4",
     "express-session": "^1.13.0",
     "jade": "^1.11.0",
+    "materialize-css": "^0.98.0",
     "mysql": "2.2.0"
+  },
+  "devDependencies": {
+    "jade": "^1.11.0",
+    "jade-loader": "^0.8.0"
   }
 }

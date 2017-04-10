@@ -18,5 +18,161 @@ block content
 							td.label
 							td
 								input(type="submit" name="submit" value="Login")
+			.header#home
+				.button_menu(ng-class="{'open':menu}")
+					ul#caja.begin(ng-click="toggle()" ng-class="{'open':menu}")
+						li.cajita
+							.link.animation1
+						li.cajita
+							.link.animation2
+						li.cajita
+							.link.animation3
+					ul.menu-desplegable(ng-class="{'open':menu,'begin':!menu}")
+						li.item-m-d
+							a(href="#home" ng-click="toggle()")
+								p	Home
+								p
+									small A little 
+								.border-lie
+						li.item-m-d
+							a(href="#about" ng-click="toggle()")
+								p	About
+								p
+									small A little 
+								.border-lie
+						li.item-m-d
+							a(href="#design" ng-click="toggle()")
+								p	Design
+								p
+									small A little 
+								.border-lie
+						li.item-m-d
+							a(href="#photography" ng-click="toggle()")
+								p	Photography
+								p
+									small A little 
+								.border-lie
+						li.item-m-d
+							a(href="#contact" ng-click="toggle()")
+								p	Contacto
+								p
+									small A little 
+								.border-lie
+				.logo
+						img(src="images/logo.png", alt="Noralo - logotipo")
+				ul.list_lenguages
+					li en
+					li es
+			.slide
+				.content_slide
+					p hi!
+					ul
+						li
+							p 
+								|This is my personal web-page. For the only
+								|purpose of showing you a little bit of my
+								|world, and the things that I’m passionate
+								|about. By the way, I’m a 25 year-old
+								|designer, living in Buenos Aires, Argentina.
+						li
+							p Nice to have you here!
+						li
+							p Take a look around :) 
+				.button_down
+					button(scroll-on-click)
+						img(src="images/mouse.png", alt="button-mouse_down")
+			.portfolio#design
+				.header_portfolio
+					h2 design
+					.jobs(ng-repeat="item in items")
+						.job_box_image(ng-if="$index%2==0")
+							img(src="{{item.srcImgMini}}", alt="" ng-click="openComponentModal(item.srcImgBig)")
+						.job_box_content
+							h3 {{item.titulo}}
+							p {{item.contenido}}
+							button(type="button" ng-click="openComponentModal(item.srcImgBig)") More
+						.job_box_image(ng-if="$index%2!==0")
+							img(src="{{item.srcImgMini}}", alt="" ng-click="openComponentModal(item.srcImgBig)")				
+			.about#about
+				.header_about
+					h2 about
+					.columns
+						.column
+							.box_xx
+								h3 About me.
+								.sub_box_y
+									p 
+										| Lorem Ipsum es simplemente el texto de
+										| relleno de las imprentas y archivos de texto.
+										| Lorem Ipsum ha sido el texto de relleno.
+							.box_xx
+								h3 What i do.
+								.sub_box_y
+									p 
+										| Lorem Ipsum es simplemente el texto de
+										| relleno de las imprentas y archivos de texto.
+										| Lorem Ipsum ha sido el texto de relleno.
+						.column
+							.box_xx
+								h3 Studies.
+								.sub_box_y
+									h4 2009-2013
+									p.institute Universidad Naciona de la Plata
+									p.function Graphic Designer
+									p.location La Plata Buenos Aires
+								.sub_box_y
+									h4 2009-2013
+									p.institute Universidad Naciona de la Plata
+									p.function Graphic Designer
+									p.location La Plata Buenos Aires
+								.sub_box_y
+									h4 2009-2013
+									p.institute Universidad Naciona de la Plata
+									p.function Graphic Designer
+									p.location La Plata Buenos Aires
+								.sub_box_y
+									h4 2009-2013
+									p.institute Universidad Naciona de la Plata
+									p.function Graphic Designer
+									p.location La Plata Buenos Aires
+						.column
+							.box_xx
+								h3 Experience.
+								.sub_box_y
+									h4 2009-2013
+									p 
+										| Lorem Ipsum es simplemente el texto de
+										| relleno de las imprentas y archivos de texto.
+										| Lorem Ipsum ha sido el texto de relleno.
+									h4 2009-2013
+									p 
+										| Lorem Ipsum es simplemente el texto de
+										| relleno de las imprentas y archivos de texto.
+										| Lorem Ipsum ha sido el texto de relleno.
+			.contact#contact
+				h2 Contact
+				form(method="post" action="/")
+					.form_group
+						label
+							span Name
+							input(type="text" name="user" required)
+					.form_group
+						label
+							span E-mail
+							input(type="text" name="user" required)
+					.form_group
+						label
+							span Message
+							textarea(name="", cols="30", rows="10")
+					.form_group
+						input.btn(type="submit" name="submit" value="Send")
+				.datos
+					.email
+						p E-mail
+						p norali.emilio@gmail.com
+					.linkedin
+						p Linkedin
+						p Norali Nayla Emilio
+								
 							
 			include layouts/footer.jade
