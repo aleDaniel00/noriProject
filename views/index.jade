@@ -3,20 +3,19 @@ block content
 			.page-dat
 				if(msj)
 					p #{msj}
-			
-				form(method="post" action="/")
-					table(cellpadding="11")
-						tr
-							td.label Usuario
-							td :
-								input(type="text" name="user" required)
-						td.label Clave:
-							td :
-								input(type="password" name="pass" required)
-						tr
-							td.label
-							td
-								input(type="submit" name="submit" value="Login")
+					form(method="post" action="/")
+						table(cellpadding="11")
+							tr
+								td.label Usuario
+								td :
+									input(type="text" name="user" required)
+							td.label Clave:
+								td :
+									input(type="password" name="pass" required)
+							tr
+								td.label
+								td
+									input(type="submit" name="submit" value="Login")
 			.header#home
 				.button_menu(ng-class="{'open':menu}")
 					ul#caja.begin(ng-click="toggle()" ng-class="{'open':menu}")

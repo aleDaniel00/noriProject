@@ -20,18 +20,6 @@ app.controller('myCtrl', function($scope, $uibModal, $log) {
             contenido: 'The integrity and crossorigin attributes are used for Subresource Integrity (SRI) checking. This allows browsers to ensure that resources hosted on third-party',
             srcImgMini: '../images/j1.jpg',
             srcImgBig: '../images/j1big.png'
-        },
-        {
-            titulo: 'Branding',
-            contenido: 'The integrity and crossorigin attributes are used for Subresource Integrity (SRI) checking. This allows browsers to ensure that resources hosted on third-party',
-            srcImgMini: '../images/j1.jpg',
-            srcImgBig: '../images/j1big.png'
-        },
-        {
-            titulo: 'Branding',
-            contenido: 'The integrity and crossorigin attributes are used for Subresource Integrity (SRI) checking. This allows browsers to ensure that resources hosted on third-party',
-            srcImgMini: '../images/j1.jpg',
-            srcImgBig: '../images/j1big.png'
         }
     ];
 
