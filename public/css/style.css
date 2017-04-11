@@ -1441,7 +1441,7 @@ Contact
     width: 200px;
     margin: 0 auto;
     text-align: center;
-    color: rgba(169, 147, 83, 0.84);
+    color: rgba(0, 0, 0, 0.84);
     font-family: Abhaya;
 }
 
@@ -1461,7 +1461,7 @@ Contact
     width: 200px;
     margin: 0 auto;
     text-align: center;
-    color: rgba(169, 147, 83, 0.84);
+    color: rgba(0, 0, 0, 0.84);
     font-family: Abhaya;
 }
 
@@ -1840,4 +1840,9 @@ ul.menu-desplegable.open li:hover>a>.border-lie {
     font-size: 1.2em;
     line-height: 20px;
     width: 199px;
+}
+
+.datos a {
+    color: #757575;
+    text-decoration: underline;
 }

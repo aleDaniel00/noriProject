@@ -60,6 +60,7 @@ angular.module('perfect_scrollbar', []).directive('perfectScrollbar', ['$parse',
                 });
             }
 
+
             // This is necessary when you don't watch anything with the scrollbar
             $elem.bind('mouseenter', update('mouseenter'));
 
