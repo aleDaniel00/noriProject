@@ -1,6 +1,6 @@
-var app = angular.module('myApp', ['ngAnimate', 'ngSanitize', 'ui.bootstrap', 'perfect_scrollbar', 'panhandler']);
+var app = angular.module('myApp', ['ngAnimate', 'ngSanitize', 'ui.bootstrap', 'perfect_scrollbar', 'panhandler', 'pascalprecht.translate']);
 
-app.controller('myCtrl', function($scope, $uibModal, $log) {
+app.controller('myCtrl', function($scope, $uibModal, $log, $translate) {
     var $ctrl = this;
     $scope.menu = false;
     $scope.items = [{
@@ -54,6 +54,11 @@ app.controller('myCtrl', function($scope, $uibModal, $log) {
 
     $scope.firstName = "John";
     $scope.lastName = "Doe";
+
+
+    $scope.changeLanguage = function(lang) {
+        $translate.use(lang);
+    }
 });
 app.directive('scrollOnClick', function() {
     return {
@@ -65,3 +70,22 @@ app.directive('scrollOnClick', function() {
         }
     }
 });
+app.config(["$translateProvider", function($translateProvider) {
+
+    var en_translations = {
+        "language": "Selected Language English",
+        "greeting": "hi"
+    }
+
+    var sp_translations = {
+        "language": "Selected Language Spanish",
+        "greeting": "hola"
+    }
+
+    $translateProvider.translations('en', en_translations);
+
+    $translateProvider.translations('sp', sp_translations);
+
+    $translateProvider.preferredLanguage('en');
+
+}]);

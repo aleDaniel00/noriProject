@@ -59,13 +59,15 @@ block content
 				.logo
 						img(src="images/logo.png", alt="Noralo - logotipo")
 				ul.list_lenguages
-					li en
-					li es
+					li(ng-click="changeLanguage('en')") en
+					li(ng-click="changeLanguage('sp')") es
 			.slide
 				.content_slide
-					p hi!
+					p {{'greeting' | translate}}!
 					ul
 						li
+							p {{'language' | translate}}
+							
 							p 
 								|This is my personal web-page. For the only
 								|purpose of showing you a little bit of my
