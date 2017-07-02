@@ -1,0 +1,111 @@
+{
+    "version": "0.9.2",
+    "data": {
+        "logo": "./images/logo.png",
+        "lenguajes": [{
+            "value": "en"
+        }, {
+            "value": "sp"
+        }],
+        "encabezados_secciones": [
+            { "value": "home" },
+            { "value": "design" },
+            { "value": "about" },
+            { "value": "photography" },
+            { "value": "contact" }
+        ],
+        "anclas": [{
+            "value": "home",
+            "intro": "esta es una intro"
+        }, {
+            "value": "design",
+            "intro": "esta es una intro"
+        }, {
+            "value": "about",
+            "intro": "esta es una intro"
+        }, {
+            "value": "photography",
+            "intro": "esta es una intro"
+        }, {
+            "value": "contact",
+            "intro": "esta es una intro"
+        }],
+        "intro": [{
+            "fondo": "./images/..",
+            "titulo": "hi",
+            "parrafos": [{
+                "parrafo1": "This is my personal web-page. For the only purpose of showing you a little bit of my world, and the things that I’m passionate about. By the way, I’m a 25 year-old designer, living in Buenos Aires, Argentina.",
+                "parrafo2": "Nice to have you here!",
+                "parrafo3": "Take a look around :)"
+            }]
+        }],
+        "secciones": [{
+            "diseño": {
+                "habilidades": [{
+                        "titulo": "Branding",
+                        "contenido": "The integrity and crossorigin attributes are used for Subresource Integrity (SRI) checking. This allows browsers to ensure that resources hosted on third-party",
+                        "srcImgMini": "../images/j1.jpg",
+                        "srcImgBig": "../images/j1big.png"
+                    },
+                    {
+                        "titulo": "Branding",
+                        "contenido": "The integrity and crossorigin attributes are used for Subresource Integrity (SRI) checking. This allows browsers to ensure that resources hosted on third-party",
+                        "srcImgMini": "../images/j1.jpg",
+                        "srcImgBig": "../images/j1big.png"
+                    },
+                    {
+                        "titulo": "Branding",
+                        "contenido": "The integrity and crossorigin attributes are used for Subresource Integrity (SRI) checking. This allows browsers to ensure that resources hosted on third-party",
+                        "srcImgMini": "../images/j1.jpg",
+                        "srcImgBig": "../images/j1big.png"
+                    }
+                ],
+                "boton_mas": "more"
+            },
+            "about": {
+                "columna_tipo1": [{
+                    "titulo": "branding.",
+                    "parrafo": "This is my personal web-page. For the only purpose of showing you a little bit of my world, and the th"
+                }, {
+                    "titulo": "What i do.",
+                    "parrafo": "This is my personal web-page. For the only purpose of showing you a little bit of my world, and the th"
+                }],
+                "columna_tipo2": {
+                    "contenidos": [{
+                            "duracion": "2009-2013",
+                            "institucion": "Universidad Naciona de la Plata",
+                            "titulo": "Graphic Designer",
+                            "parrrafo3": "La Plata Buenos Aires"
+                        },
+                        {
+                            "duracion": "2009-2013",
+                            "institucion": "Universidad Naciona de la Plata",
+                            "titulo": "Graphic Designer",
+                            "parrrafo3": "La Plata Buenos Aires"
+                        },
+                        {
+                            "duracion": "2009-2013",
+                            "institucion": "Universidad Naciona de la Plata",
+                            "titulo": "Graphic Designer",
+                            "parrrafo3": "La Plata Buenos Aires"
+                        }
+                    ],
+                    "titulo": "estudios"
+                },
+                "columna_tipo3": {
+                    "contenidos": [{
+                            "duracion": "2009-2013",
+                            "parrafo": "Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno."
+                        },
+                        {
+                            "duracion": "2009-2013",
+                            "parrafo": "Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno."
+                        }
+                    ],
+                    "titulo": "experience"
+                }
+            }
+
+        }]
+    }
+}

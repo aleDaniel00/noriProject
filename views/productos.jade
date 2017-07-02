@@ -1,33 +1,87 @@
 extends layouts/header.jade
 
 block content
-			.page-data
-				a(href="/productos/logout") Logout
-				.data-btn
-					button(onClick="addProducto();") + Add
-				.data-table
-					table(border="1" cellpadding="7" cellspacing="7")
-						tr
-							//th(width="50px") No
-							th Nombre
-							th Descripion
-							th Precio
-							th Imagen
-							th(width="120px") Action
+			//- .page-data(ng-show="login")
+			//- 	p #{msj}
+			//- 	a(href="/productos/logout") Logout
+			//- 	.data-btn
+			//- 		button(onClick="addProducto();") + Add
+			//- 	.data-table
+			//- 		table(border="1" cellpadding="7" cellspacing="7")
+			//- 			tr
+			//- 				//th(width="50px") No
+			//- 				th Nombre
+			//- 				th Descripion
+			//- 				th Precio
+			//- 				th Imagen
+			//- 				th(width="120px") Action
 							
-						if data.length == 0
-							tr
-								td(colspan="3") No hay productos
-						else
-							for producto in data
-								tr
-									//td=(i+1)
-									td=producto.nombre
-									td=producto.descripcion
-									td=producto.precio
-									td=producto.imagen
-									td
-										a.a-inside.edit(href="../productos/edit/#{producto.id}") Edit
-										a.a-inside.delete(href="../productos/delete/#{producto.id}") Delete
-
+			//- 			if data.length == 0
+			//- 				tr
+			//- 					td(colspan="3") No hay productos
+			//- 			else
+			//- 				for producto in data
+			//- 					tr
+			//- 						//td=(i+1)
+			//- 						td=producto.nombre
+			//- 						td=producto.descripcion
+			//- 						td=producto.precio
+			//- 						td=producto.imagen
+			//- 						td
+			//- 							a.a-inside.edit(href="../productos/edit/#{producto.id}") Edit
+			//- 							a.a-inside.delete(href="../productos/delete/#{producto.id}") Delete
+			div(ng-controller="panelController")
+				nav.navbar.navbar-toggleable-md.navbar-inverse.fixed-top.bg-inverse
+					button.navbar-toggler.navbar-toggler-right.hidden-lg-up(type='button', data-toggle='collapse', data-target='#navbarsExampleDefault', aria-controls='navbarsExampleDefault', aria-expanded='false', aria-label='Toggle navigation')
+						span.navbar-toggler-icon
+					a.navbar-brand(href='#') CRUD Nori-Project
+					#navbarsExampleDefault.collapse.navbar-collapse
+						ul.navbar-nav.mr-auto
+							li.nav-item.active
+								a.nav-link(href='#')
+									| Inicio 
+									span.sr-only (current)
+							li.nav-item
+								a.nav-link(href='#') Configuraciones
+							li.nav-item
+								a.nav-link(href='#') Perfil
+							li.nav-item
+								a.nav-link(href='/productos/logout') Close session
+						form.form-inline.mt-2.mt-md-0
+							input.form-control.mr-sm-2(type='text', placeholder='Search')
+							button.btn.btn-outline-success.my-2.my-sm-0(type='submit') Search
+				.container-fluid
+					.row
+						nav.col-sm-3.col-md-2.hidden-xs-down.bg-faded.sidebar
+							ul.nav.nav-pills.flex-column
+								li.nav-item
+									a.nav-link.active(href='#')
+										| data 
+										span.sr-only (current)
+								li.nav-item
+									a.nav-link(href="/productos/verfotos") logo
+								li.nav-item
+									a.nav-link(href='#') lenguajes
+								li.nav-item
+									a.nav-link(href='#' ) Encabezados de secciones
+								li.nav-item
+									a.nav-link(href='#') Anclas
+								li.nav-item
+									a.nav-link(href='#') Intro
+								li.nav-item
+									a.nav-link(href='/productos/logo/0') Secciones
+						main.col-sm-9.offset-sm-3.col-md-10.offset-md-2.pt-3
+							h1 Adminstracion de contenidos
+							section.row.text-center.placeholders
+									.card(style='width: 20rem;', ng-repeat="(key, value) in data")
+										img.card-img-top(src='./images/svg/{{key}}.svg', alt='Card image cap')
+										.card-block
+											h4.card-title {{key | limitTo:11 }}
+							h2 Section title 
+								if data
+									for imagen in data
+										ul
+											li.imagehere #{imagen.caption}
+												//- img.card-img-top(src='#{str}', alt='Card image cap')
+												
 			include layouts/footer.jade

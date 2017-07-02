@@ -1,3 +1,6 @@
+/* GET home page. */
+//Cuando accedemos a la raíz del sitio nos muestra la plantilla index.hbs
+
 /*
  * GET home page.
  */

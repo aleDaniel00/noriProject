@@ -149,7 +149,7 @@ table {
 /*fin reset.css*/
 
 .page-data {
-    display: none;
+    display: block;
 }
 
 
@@ -1845,4 +1845,375 @@ ul.menu-desplegable.open li:hover>a>.border-lie {
 .datos a {
     color: #757575;
     text-decoration: underline;
+}
+
+.page-dat {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: rgba(221, 221, 221, 0.75);
+    z-index: 2;
+    /* opacity: 0.2; */
+}
+
+.page-dat .backdrop {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.47);
+    z-index: -2;
+    /* background: url(../images/pixel.jpg); */
+    /* z-index: 2; */
+    opacity: 0.8;
+}
+
+.gauss {
+    -moz-filter: blur(5px);
+    -webkit-filter: blur(5px);
+    -o-filter: blur(5px);
+    -ms-filter: blur(5px);
+    filter: blur(3px);
+}
+
+.card-container.card {
+    max-width: 350px;
+    padding: 40px 40px;
+}
+
+.btn {
+    font-weight: 700;
+    height: 36px;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
+    cursor: default;
+}
+
+
+/*
+ * Card component
+ */
+
+.card {
+    /* background-color: rgba(255, 255, 255, 0.08); */
+    /* just in case there no content*/
+    padding: 20px 25px 30px;
+    margin: 0 auto 25px;
+    margin-top: 50px;
+    /* shadows and rounded borders */
+    -moz-border-radius: 2px;
+    /* -webkit-border-radius: 2px; */
+    /* border-radius: 2px; */
+    -moz-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+    /* -webkit-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3); */
+    /* box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3); */
+}
+
+.profile-img-card {
+    width: 96px;
+    height: 96px;
+    margin: 0 auto 10px;
+    display: block;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
+}
+
+
+/*
+ * Form styles
+ */
+
+.profile-name-card {
+    font-size: 14px;
+    font-weight: bold;
+    text-align: center;
+    margin: 10px 0 0;
+    min-height: 1em;
+}
+
+.reauth-email {
+    display: block;
+    color: #404040;
+    line-height: 2;
+    margin-bottom: 10px;
+    font-size: 14px;
+    text-align: center;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.form-signin #inputEmail,
+.form-signin #inputPassword {
+    direction: ltr;
+    height: 44px;
+    font-size: 16px;
+}
+
+.form-signin input[type=email],
+.form-signin input[type=password],
+.form-signin input[type=text],
+.form-signin button {
+    width: 100%;
+    display: block;
+    margin-bottom: 10px;
+    z-index: 1;
+    position: relative;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.form-signin .form-control:focus {
+    border-color: rgb(104, 145, 162);
+    outline: 0;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 8px rgb(104, 145, 162);
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 8px rgb(104, 145, 162);
+}
+
+.btn.btn-signin {
+    color: #c1c58a;
+    background-color: rgb(0, 0, 0);
+    /* background-color: linear-gradient(rgb(104, 145, 162), rgb(12, 97, 33));*/
+    padding: 0px;
+    cursor: pointer;
+    font-weight: 700;
+    font-size: 14px;
+    height: 36px;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+    border: none;
+    -o-transition: all 0.218s;
+    -moz-transition: all 0.218s;
+    -webkit-transition: all 0.218s;
+    transition: all 0.218s;
+}
+
+.btn.btn-signin:hover,
+.btn.btn-signin:active,
+.btn.btn-signin:focus {
+    background-color: rgb(0, 0, 0);
+    color: rgb(250, 255, 189);
+    outline: none;
+}
+
+.forgot-password {
+    color: rgb(104, 145, 162);
+}
+
+.forgot-password:hover,
+.forgot-password:active,
+.forgot-password:focus {
+    color: rgb(12, 97, 33);
+}
+
+#wrapper input.form-control {
+    margin: 8px 0;
+}
+
+#wrapper input.form-control:focus {
+    border-color: rgba(165, 165, 165, 0.84);
+    outline: 0;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 8px rgba(100, 100, 100, 0.6);
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 8px rgba(101, 101, 101, 0.6);
+}
+
+body.no-scroll {
+    /* overflow: hidden; */
+}
+
+
+/* Move down content because we have a fixed navbar that is 50px tall */
+
+
+/*
+body {
+    padding-top: 50px;
+}*/
+
+
+/*
+ * Typography
+ */
+
+.container-fluid h1 {
+    margin-bottom: 20px;
+    padding-bottom: 9px;
+    border-bottom: 1px solid #faee85;
+    font-size: 3rem;
+    color: #faee85;
+}
+
+
+/*
+ * Sidebar
+ */
+
+.sidebar {
+    position: fixed;
+    top: 51px;
+    bottom: 0;
+    left: 0;
+    z-index: 1000;
+    padding: 20px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    /* Scrollable contents if viewport is shorter than content. */
+    border-right: 1px solid #faee85;
+}
+
+
+/* Sidebar navigation */
+
+.sidebar {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.sidebar .nav {
+    margin-bottom: 20px;
+}
+
+.sidebar .nav-item {
+    width: 100%;
+}
+
+.sidebar .nav-item+.nav-item {
+    margin-left: 0;
+}
+
+.sidebar .nav-link {
+    border-radius: 0;
+}
+
+
+/*
+ * Dashboard
+ */
+
+
+/* Placeholders */
+
+.placeholders {
+    padding-bottom: 3rem;
+}
+
+.placeholder img {
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+}
+
+.placeholder h4 {
+    color: #cbcbcb;
+    font-size: 2rem;
+}
+
+table th,
+table td {
+    color: #a0a0a0;
+}
+
+.table thead th {
+    border-color: #6e6e6e;
+}
+
+.container-fluid {
+    background: #3f3f3f;
+}
+
+nav.col-sm-3.col-md-2.hidden-xs-down.bg-faded.sidebar {
+    background: #171717;
+}
+
+a.nav-link {
+    color: rgba(153, 148, 103, 0.83);
+}
+
+.nav-pills .nav-item.show .nav-link,
+.nav-pills .nav-link.active {
+    background: #faee85;
+    color: black;
+    font-weight: 800;
+}
+
+.nav-pills .nav-link:hover {
+    background: #faee85;
+    color: black;
+    font-weight: 600;
+}
+
+.btn-outline-success {
+    color: #faee85;
+    border-color: #faee85;
+}
+
+button.btn.btn-outline-success.my-2.my-sm-0 {
+    font-family: Avenir;
+}
+
+li.nav-item {}
+
+a.nav-link {}
+
+.navbar-inverse .navbar-nav .nav-link {
+    margin-top: 11px;
+}
+
+main.col-sm-9.offset-sm-3.col-md-10.offset-md-2.pt-3 {
+    padding-top: 6rem!important;
+}
+
+h1 {}
+
+.navbar-inverse .navbar-nav .active>.nav-link,
+.navbar-inverse .navbar-nav .nav-link.active,
+.navbar-inverse .navbar-nav .nav-link.open,
+.navbar-inverse .navbar-nav .open>.nav-link {
+    color: #faee85;
+}
+
+.navbar-inverse .navbar-brand,
+.navbar-inverse .navbar-toggler {
+    color: #faee85;
+}
+
+main.col-sm-9.offset-sm-3.col-md-10.offset-md-2.pt-3 .card {
+    margin: 58px;
+    background: #2b2b2b;
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.56);
+    transition: 600ms;
+    cursor: pointer;
+}
+
+h4.card-title {
+    color: #e3e3e3;
+    font-size: 1.5em;
+}
+
+p.card-text {
+    color: white;
+    font-family: avenir;
+    font-weight: 700;
+    line-height: 22px;
+    margin: 35px 0;
+}
+
+img.card-img-top {
+    height: 81px;
+}
+
+.card.ng-scope {
+    width: 16rem !important;
+    margin: 37px 25px !important;
+}
+
+main.col-sm-9.offset-sm-3.col-md-10.offset-md-2.pt-3 .card:hover {
+    background: #292b2c;
+    box-shadow: 0px 1px 3px rgba(128, 128, 128, 0.56);
+    transition: 400ms;
 }

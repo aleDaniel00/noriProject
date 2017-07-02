@@ -1,27 +1,27 @@
-var app = angular.module('myApp', ['ngAnimate', 'ngSanitize', 'ui.bootstrap', 'perfect_scrollbar', 'panhandler', 'pascalprecht.translate']);
+var app = angular.module('myApp', ['ngAnimate', 'ngSanitize', 'ui.bootstrap', 'pascalprecht.translate']);
 
-app.controller('myCtrl', function($scope, $uibModal, $log, $translate) {
+app.controller('myCtrl', function($scope, $uibModal, $log, $translate, $location, $http) {
     var $ctrl = this;
+    $scope.login = false;
+    $http.get("./data.json").then(function(response) {
+
+        console.log(response.data.data.secciones[0]);
+        $scope.data = response.data.data;
+        debugger
+        $scope.srcLogo = response.data.data.logo;
+        $scope.lenguajes = response.data.data.lenguajes;
+        $scope.encabezados = response.data.data.encabezados_secciones;
+        $scope.habilidades = response.data.data.secciones[0].diseño.habilidades;
+        $scope.boton_mas = response.data.data.secciones[0].diseño.boton_mas;
+        $scope.anclas = response.data.data.anclas;
+        $scope.intro = response.data.data.intro[0];
+        $scope.about = response.data.data.secciones[0].about;
+    });
+    debugger
+    if ($location.$$absUrl == 'http://localhost:4300/productos') {
+        $scope.login = true;
+    }
     $scope.menu = false;
-    $scope.items = [{
-            titulo: 'Branding',
-            contenido: 'The integrity and crossorigin attributes are used for Subresource Integrity (SRI) checking. This allows browsers to ensure that resources hosted on third-party',
-            srcImgMini: '../images/j1.jpg',
-            srcImgBig: '../images/j1big.png'
-        },
-        {
-            titulo: 'Branding',
-            contenido: 'The integrity and crossorigin attributes are used for Subresource Integrity (SRI) checking. This allows browsers to ensure that resources hosted on third-party',
-            srcImgMini: '../images/j1.jpg',
-            srcImgBig: '../images/j1big.png'
-        },
-        {
-            titulo: 'Branding',
-            contenido: 'The integrity and crossorigin attributes are used for Subresource Integrity (SRI) checking. This allows browsers to ensure that resources hosted on third-party',
-            srcImgMini: '../images/j1.jpg',
-            srcImgBig: '../images/j1big.png'
-        }
-    ];
 
 
     $scope.toggle = function(params) {
@@ -31,8 +31,9 @@ app.controller('myCtrl', function($scope, $uibModal, $log, $translate) {
             $scope.menu = false;
         }
     }
-    $scope.openComponentModal = function(imagen) {
-        var src = imagen
+    $scope.openComponentModal = function(item) {
+        debugger
+        $scope.src = item
         var modalInstance = $uibModal.open({
             animation: true,
             component: 'modalPortfolio',
@@ -40,7 +41,7 @@ app.controller('myCtrl', function($scope, $uibModal, $log, $translate) {
             size: 'cienPorCiento',
             resolve: {
                 srcImg: function() {
-                    return src;
+                    return $scope.src;
                 }
             }
         });

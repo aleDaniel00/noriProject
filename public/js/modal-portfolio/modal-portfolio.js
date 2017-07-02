@@ -5,12 +5,13 @@ app.component('modalPortfolio', {
         close: '&',
         dismiss: '&'
     },
-    controller: function($scope) {
+    controller: function() {
 
         var $ctrl = this;
 
         $ctrl.$onInit = function() {
-            $scope.srcImg = $ctrl.resolve.srcImg;
+            debugger
+            $ctrl.srcImg = $ctrl.resolve.srcImg;
         };
 
 

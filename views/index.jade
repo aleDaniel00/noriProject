@@ -1,22 +1,18 @@
 extends layouts/header.jade
 block content
-			.page-dat
-				if(msj)
-					p #{msj}
-					form(method="post" action="/")
-						table(cellpadding="11")
-							tr
-								td.label Usuario
-								td :
-									input(type="text" name="user" required)
-							td.label Clave:
-								td :
-									input(type="password" name="pass" required)
-							tr
-								td.label
-								td
-									input(type="submit" name="submit" value="Login")
-			.header#home
+			if(msj)
+				.page-data
+					.backdrop.gauss
+					.container
+						.card.card-container
+							img#profile-img.profile-img-card(src='//ssl.gstatic.com/accounts/ui/avatar_2x.png' alt='')
+							p#profile-name.profile-name-card #{msj}
+							form.form-signin(method="post" action="/")
+								span#reauth-email.reauth-email
+								input#inputEmail.form-control(type='text', placeholder='Name User', required='', autofocus='',name='user')
+								input#inputPassword.form-control(type='password', placeholder='Password', required='',name='pass')
+								button.btn.btn-lg.btn-primary.btn-block.btn-signin(type='submit' name="submit" value="Login") Sign in
+			.header#home(ng-class="{'gauss':login}")
 				.button_menu(ng-class="{'open':menu}")
 					ul#caja.begin(ng-click="toggle()" ng-class="{'open':menu}")
 						li.cajita
@@ -26,131 +22,68 @@ block content
 						li.cajita
 							.link.animation3
 					ul.menu-desplegable(ng-class="{'open':menu,'begin':!menu}")
-						li.item-m-d
-							a(href="#home" ng-click="toggle()")
-								p	Home
+						li.item-m-d(ng-repeat="item in anclas")
+							a(href="#{{item.value}}" ng-click="toggle()")
+								p	{{item.value}}
 								p
-									small A little 
-								.border-lie
-						li.item-m-d
-							a(href="#about" ng-click="toggle()")
-								p	About
-								p
-									small A little 
-								.border-lie
-						li.item-m-d
-							a(href="#design" ng-click="toggle()")
-								p	Design
-								p
-									small A little 
-								.border-lie
-						li.item-m-d
-							a(href="#photography" ng-click="toggle()")
-								p	Photography
-								p
-									small A little 
-								.border-lie
-						li.item-m-d
-							a(href="#contact" ng-click="toggle()")
-								p	Contacto
-								p
-									small A little 
+									small {{item.intro}}
 								.border-lie
 				.logo
-						img(src="images/logo.png", alt="Noralo - logotipo")
+					img(ng-if="srcLogo" ng-src="{{srcLogo}}", alt="Norali - logotipo")
 				ul.list_lenguages
-					li(ng-click="changeLanguage('en')") en
-					li(ng-click="changeLanguage('sp')") es
-			.slide
+					li(ng-repeat="item in lenguajes" ng-click="changeLanguage(item.value)") 	{{item.value}}
+			.slide(ng-class="{'gauss':login}")
 				.content_slide
-					p {{'greeting' | translate}}!
+					p {{intro.titulo | translate}}!
 					ul
 						li
-							p {{'language' | translate}}
-							
-							p 
-								|This is my personal web-page. For the only
-								|purpose of showing you a little bit of my
-								|world, and the things that I’m passionate
-								|about. By the way, I’m a 25 year-old
-								|designer, living in Buenos Aires, Argentina.
+							p {{intro.parrafos[0].parrafo1}}
 						li
-							p Nice to have you here!
+							p {{intro.parrafos[0].parrafo2}}
 						li
-							p Take a look around :) 
+							p {{intro.parrafos[0].parrafo3}}
 				.button_down
 					button(scroll-on-click)
 						img(src="images/mouse.png", alt="button-mouse_down")
 			.portfolio#design
 				.header_portfolio
-					h2 design
-					.jobs(ng-repeat="item in items")
+					h2 {{encabezados[1].value}}
+					.jobs(ng-repeat="item in habilidades")
 						.job_box_image(ng-if="$index%2==0")
-							img(src="{{item.srcImgMini}}", alt="" ng-click="openComponentModal(item.srcImgBig)")
+							img( ng-if="item.srcImgMini" ng-src="{{item.srcImgMini}}", alt="" ng-click="openComponentModal(item)")
 						.job_box_content
 							h3 {{item.titulo}}
+							code {{item.srcImgBig}}
 							p {{item.contenido}}
 							button(type="button" ng-click="openComponentModal(item.srcImgBig)") More
 						.job_box_image(ng-if="$index%2!==0")
-							img(src="{{item.srcImgMini}}", alt="" ng-click="openComponentModal(item.srcImgBig)")				
+							img(ng-if="item.srcImgMini" ng-src="{{item.srcImgMini}}", alt="" ng-click="openComponentModal(item)")				
 			.about#about
 				.header_about
-					h2 about
+					h2 {{encabezados[2].value}}
 					.columns
 						.column
-							.box_xx
-								h3 About me.
+							.box_xx(ng-repeat="item in about.columna_tipo1")
+								h3 {{item.titulo}}
 								.sub_box_y
-									p 
-										| Lorem Ipsum es simplemente el texto de
-										| relleno de las imprentas y archivos de texto.
-										| Lorem Ipsum ha sido el texto de relleno.
-							.box_xx
-								h3 What i do.
-								.sub_box_y
-									p 
-										| Lorem Ipsum es simplemente el texto de
-										| relleno de las imprentas y archivos de texto.
-										| Lorem Ipsum ha sido el texto de relleno.
+									p {{item.parrafo}}
 						.column
 							.box_xx
-								h3 Studies.
-								.sub_box_y
-									h4 2009-2013
-									p.institute Universidad Naciona de la Plata
-									p.function Graphic Designer
-									p.location La Plata Buenos Aires
-								.sub_box_y
-									h4 2009-2013
-									p.institute Universidad Naciona de la Plata
-									p.function Graphic Designer
-									p.location La Plata Buenos Aires
-								.sub_box_y
-									h4 2009-2013
-									p.institute Universidad Naciona de la Plata
-									p.function Graphic Designer
-									p.location La Plata Buenos Aires
-								.sub_box_y
-									h4 2009-2013
-									p.institute Universidad Naciona de la Plata
-									p.function Graphic Designer
-									p.location La Plata Buenos Aires
+								h3 {{about.columna_tipo2.titulo}}.
+								.sub_box_y(ng-repeat="item in about.columna_tipo2.contenidos")
+									h4 {{item.duracion}}
+									p.institute {{item.institucion}}
+									p.function {{item.titulo}}
+									p.location {{item.parrafo3}}
 						.column
 							.box_xx
-								h3 Experience.
+								h3 {{about.columna_tipo3.titulo}}.
 								.sub_box_y
-									h4 2009-2013
-									p 
-										| Lorem Ipsum es simplemente el texto de
-										| relleno de las imprentas y archivos de texto.
-										| Lorem Ipsum ha sido el texto de relleno.
-									h4 2009-2013
-									p 
-										| Lorem Ipsum es simplemente el texto de
-										| relleno de las imprentas y archivos de texto.
-										| Lorem Ipsum ha sido el texto de relleno.
+									div(ng-repeat="item in about.columna_tipo3.contenidos")
+										h4 {{item.duracion}}
+										p {{item.parrafo}}
 			.contact#contact
-				h2 Contact
+				h2 {{encabezados[4].value}}
 				form(method="post" action="/")
 					.form_group
 						label
