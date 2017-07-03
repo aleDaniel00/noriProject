@@ -53,11 +53,16 @@ block content
 							img( ng-if="item.srcImgMini" ng-src="{{item.srcImgMini}}", alt="" ng-click="openComponentModal(item)")
 						.job_box_content
 							h3 {{item.titulo}}
-							code {{item.srcImgBig}}
 							p {{item.contenido}}
 							button(type="button" ng-click="openComponentModal(item.srcImgBig)") More
 						.job_box_image(ng-if="$index%2!==0")
 							img(ng-if="item.srcImgMini" ng-src="{{item.srcImgMini}}", alt="" ng-click="openComponentModal(item)")				
+			.photography
+				.header_photography
+					h2 {{encabezados[3].value}}
+					button(ng-click="openGallery()")
+						img(ng-src="{{photography.src_fondo}}")		
+						span.flotante {{photography.descripcion}}					
 			.about#about
 				.header_about
 					h2 {{encabezados[2].value}}

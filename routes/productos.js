@@ -4,7 +4,7 @@
 // //Requerimos el módulo 'multer' y llamamos a la función multer pasando como dato el directorio donde se suben los archivos
 var multer = require('multer');
 var upload = multer({ dest: './uploads/' });
-var websocket = require("socket.io");
+//var websocket = require("socket.io");
 // //Requerimos el módulo 'fs' para la copia de archivos
 var fs = require('fs');
 //Cuando seleccionamos la opción 'Ver fotos' de la página principal del sitio se ejecuta

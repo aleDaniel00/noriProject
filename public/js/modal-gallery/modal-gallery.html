@@ -1,0 +1,9 @@
+<div class="modal-body" id="modal-body">
+    <button class="close" ng-click="$ctrl.close()"></button>
+    <div carousel>
+        <div class="carousel-item" href="javascript:void(0);" ng-repeat="image in $ctrl.images">
+            <h3 class="modal-title" id="modal-title">{{image.descripcion}}</h3>
+            <img ng-src="{{image.src}}" />
+        </div>
+    </div>
+</div>

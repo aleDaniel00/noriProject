@@ -517,7 +517,7 @@ html {
 }
 
 .slide>.content_slide>p {
-    font-size: 25rem;
+    font-size: 23rem;
     width: 42%;
     margin: 0 5%;
     color: #faee85;
@@ -1212,7 +1212,7 @@ itemPortfolio .modal-content {
 }
 
 .portfolio>.header_portfolio .job_box_content h3 {
-    padding: 2em 0em 0em 0em;
+    padding: 1em 0em 0em 0em;
     margin: 0 auto;
     width: 100%;
     display: block;
@@ -2216,4 +2216,127 @@ main.col-sm-9.offset-sm-3.col-md-10.offset-md-2.pt-3 .card:hover {
     background: #292b2c;
     box-shadow: 0px 1px 3px rgba(128, 128, 128, 0.56);
     transition: 400ms;
+}
+
+.photography {
+    width: 100%;
+    /* background: red; */
+}
+
+.photography>.header_photography>h2 {
+    text-align: center;
+    text-transform: capitalize;
+    margin: 0;
+    height: 200px;
+    line-height: 200px;
+    font-family: Abhaya;
+    font-size: 5em;
+}
+
+.photography>.header_photography>button {
+    background: #ff3030;
+    width: 100%;
+    outline: none;
+    padding: 0;
+    border: navajowhite;
+    position: relative;
+}
+
+.photography>.header_photography>button>img {
+    width: 100%;
+    background: green;
+    height: 514px;
+}
+
+.photography>.header_photography>button>span.flotante {
+    position: absolute;
+    font-size: 10em;
+    color: white;
+    top: 0;
+    text-align: center;
+    width: 100%;
+    height: 100%;
+    line-height: 3.2em;
+    display: block;
+    background: rgba(24, 24, 24, 0.44);
+    font-family: Abhaya;
+    text-transform: capitalize;
+}
+
+modal-gallery>div.modal-body>div.carousel>div>img {
+    background: red;
+    width: 100%;
+    /* height: 100%; */
+}
+
+modal-gallery>div.modal-body {
+    width: 100%;
+    box-shadow: none;
+    /* background: rgba(140, 140, 143, 0.22); */
+    height: 100%;
+    padding: 0;
+}
+
+.modal-dialog.modal-gallery_size {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    background-color: rgba(0, 0, 0, 0);
+    box-shadow: none;
+    border: none;
+}
+
+.modal-dialog.modal-gallery_size>.modal-content {
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    box-shadow: none;
+    background: rgba(0, 0, 255, 0);
+    border: none;
+}
+
+.modal.gallery.fade {
+    width: 100%;
+    height: 100%;
+    margin: auto 0;
+    background: red;
+    background-color: rgba(255, 0, 0, 0);
+    box-shadow: none;
+    border: none;
+    max-height: 100%;
+}
+
+modal-gallery>div.modal-body>div.carousel {
+    /* background: rgba(75, 80, 75, 0.25); */
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    box-shadow: none;
+}
+
+modal-gallery>div.modal-body>div.carousel>div {
+    width: 65%;
+    height: 100%;
+}
+
+modal-gallery>div.modal-body>div.carousel>div>h3 {
+    color: white;
+    text-align: center;
+    font-size: 3em;
+    text-transform: capitalize;
+}
+
+modal-gallery>div.modal-body>button.close {
+    color: white;
+    position: fixed;
+    right: 1%;
+    font-size: 3em;
+    z-index: 2000;
+    top: 2%;
+    width: 70px;
+    height: 70px;
+    font-weight: 100;
+    opacity: 1;
+    background: url(../images/svg/cancel.svg);
+    background-size: cover;
 }

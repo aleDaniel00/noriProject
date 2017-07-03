@@ -15,7 +15,7 @@ var connection = require('express-myconnection');
 
 
 // all environments
-app.set('port', process.env.PORT || 4300);
+app.set('port', process.env.PORT || 4100);
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
 //app.use(express.favicon());

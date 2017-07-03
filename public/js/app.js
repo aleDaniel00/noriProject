@@ -1,4 +1,4 @@
-var app = angular.module('myApp', ['ngAnimate', 'ngSanitize', 'ui.bootstrap', 'pascalprecht.translate']);
+var app = angular.module('myApp', ['ngAnimate', 'ngSanitize', 'ui.bootstrap', 'pascalprecht.translate', 'ui.materialize']);
 
 app.controller('myCtrl', function($scope, $uibModal, $log, $translate, $location, $http) {
     var $ctrl = this;
@@ -16,6 +16,7 @@ app.controller('myCtrl', function($scope, $uibModal, $log, $translate, $location
         $scope.anclas = response.data.data.anclas;
         $scope.intro = response.data.data.intro[0];
         $scope.about = response.data.data.secciones[0].about;
+        $scope.photography = response.data.data.secciones[0].photography;
     });
     debugger
     if ($location.$$absUrl == 'http://localhost:4300/productos') {
@@ -42,6 +43,28 @@ app.controller('myCtrl', function($scope, $uibModal, $log, $translate, $location
             resolve: {
                 srcImg: function() {
                     return $scope.src;
+                }
+            }
+        });
+
+        modalInstance.result.then(function(selectedItem) {
+            $ctrl.selected = selectedItem;
+        }, function() {
+            $log.info('modal-component dismissed at: ' + new Date());
+        });
+    };
+
+    $scope.openGallery = function() {
+        debugger
+
+        var modalInstance = $uibModal.open({
+            animation: true,
+            component: 'modalGallery',
+            windowClass: 'gallery',
+            size: 'gallery_size',
+            resolve: {
+                gallery: function() {
+                    return $scope.photography.gallery;
                 }
             }
         });

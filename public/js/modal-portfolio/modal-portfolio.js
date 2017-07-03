@@ -10,7 +10,7 @@ app.component('modalPortfolio', {
         var $ctrl = this;
 
         $ctrl.$onInit = function() {
-            debugger
+
             $ctrl.srcImg = $ctrl.resolve.srcImg;
         };
 

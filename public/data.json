@@ -62,6 +62,23 @@
                 ],
                 "boton_mas": "more"
             },
+            "photography": {
+                "descripcion": "view gallery",
+                "src_fondo": "../images/galeria_landing.jpg",
+                "gallery": [{
+                        "src": "../images/gallery/galeria_1.jpg",
+                        "descripcion": "anfiteatro"
+                    },
+                    {
+                        "src": "../images/gallery/galeria_1.jpg",
+                        "descripcion": "anfiteatro"
+                    },
+                    {
+                        "src": "../images/gallery/galeria_1.jpg",
+                        "descripcion": "anfiteatro"
+                    }
+                ]
+            },
             "about": {
                 "columna_tipo1": [{
                     "titulo": "branding.",
