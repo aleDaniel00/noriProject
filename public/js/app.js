@@ -1,13 +1,20 @@
+$.getJSON("./dataEn.json", function(json) {
+    console.log(json); // this will show the info it in firebug console
+    window.conenidoWebEn = json;
+});
+
+
+debugger
 var app = angular.module('myApp', ['ngAnimate', 'ngSanitize', 'ui.bootstrap', 'pascalprecht.translate', 'ui.materialize']);
 
 app.controller('myCtrl', function($scope, $uibModal, $log, $translate, $location, $http) {
     var $ctrl = this;
     $scope.login = false;
-    $http.get("./data.json").then(function(response) {
 
+    $http.get("./dataEn.json").then(function(response) {
         console.log(response.data.data.secciones[0]);
         $scope.data = response.data.data;
-        debugger
+
         $scope.srcLogo = response.data.data.logo;
         $scope.lenguajes = response.data.data.lenguajes;
         $scope.encabezados = response.data.data.encabezados_secciones;
@@ -18,7 +25,8 @@ app.controller('myCtrl', function($scope, $uibModal, $log, $translate, $location
         $scope.about = response.data.data.secciones[0].about;
         $scope.photography = response.data.data.secciones[0].photography;
     });
-    debugger
+
+
     if ($location.$$absUrl == 'http://localhost:4300/productos') {
         $scope.login = true;
     }
@@ -81,6 +89,7 @@ app.controller('myCtrl', function($scope, $uibModal, $log, $translate, $location
 
 
     $scope.changeLanguage = function(lang) {
+        debugger
         $translate.use(lang);
     }
 });
@@ -95,10 +104,11 @@ app.directive('scrollOnClick', function() {
     }
 });
 app.config(["$translateProvider", function($translateProvider) {
-
+    console.log(conenidoWebEn.data)
+    debugger
     var en_translations = {
-        "language": "Selected Language English",
-        "greeting": "hi"
+        "language": "Selected Language Spanish",
+        "greeting": conenidoWebEn.data.intro[0].titulo
     }
 
     var sp_translations = {
