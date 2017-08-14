@@ -1,6 +1,7 @@
 <html ng-app="myApp">
 
 <head>
+    <meta charset="UTF-8">
     <title>Nori</title>
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
     <link href="./css/materialize.min.css" rel="stylesheet">
@@ -16,7 +17,6 @@
     <script src="//angular-ui.github.io/bootstrap/ui-bootstrap-tpls-2.5.0.js"></script>
     <script src="//cdn.rawgit.com/angular-translate/bower-angular-translate/2.5.0/angular-translate.js"></script>
     <script src="./js/app.js"></script>
-    <script src="./js/panelController.js"></script>
     <script src="./js/modal-portfolio/modal-portfolio.js"></script>
     <script src="./js/modal-gallery/modal-gallery.js"></script>
 </head>
@@ -38,71 +38,34 @@
                         </li>
                     </ul>
                     <ul ng-class="{'open':menu,'begin':!menu}" class="menu-desplegable begin">
-                        <!-- ngRepeat: item in anclas -->
-                        <li ng-repeat="item in anclas" class="item-m-d ng-scope">
-                            <a href="#home" ng-click="toggle()">
-                                <p class="ng-binding"> home</p>
-                                <p><small class="ng-binding">esta es una intro</small></p>
-                                <div class="border-lie"></div>
-                            </a>
-                        </li>
-                        <!-- end ngRepeat: item in anclas -->
-                        <li ng-repeat="item in anclas" class="item-m-d ng-scope">
+                        <li ng-repeat="item in anclas" class="item-m-d">
                             <a href="#design" ng-click="toggle()">
-                                <p class="ng-binding"> design</p>
-                                <p><small class="ng-binding">esta es una intro</small></p>
+                                <p>{{item.value}}</p>
+                                <p><small>{{item.intro}}</small></p>
                                 <div class="border-lie"></div>
                             </a>
                         </li>
-                        <!-- end ngRepeat: item in anclas -->
-                        <li ng-repeat="item in anclas" class="item-m-d ng-scope">
-                            <a href="#about" ng-click="toggle()">
-                                <p class="ng-binding"> about</p>
-                                <p><small class="ng-binding">esta es una intro</small></p>
-                                <div class="border-lie"></div>
-                            </a>
-                        </li>
-                        <!-- end ngRepeat: item in anclas -->
-                        <li ng-repeat="item in anclas" class="item-m-d ng-scope">
-                            <a href="#photography" ng-click="toggle()">
-                                <p class="ng-binding"> photography</p>
-                                <p><small class="ng-binding">esta es una intro</small></p>
-                                <div class="border-lie"></div>
-                            </a>
-                        </li>
-                        <!-- end ngRepeat: item in anclas -->
-                        <li ng-repeat="item in anclas" class="item-m-d ng-scope">
-                            <a href="#contact" ng-click="toggle()">
-                                <p class="ng-binding"> contact</p>
-                                <p><small class="ng-binding">esta es una intro</small></p>
-                                <div class="border-lie"></div>
-                            </a>
-                        </li>
-                        <!-- end ngRepeat: item in anclas -->
                     </ul>
                 </div>
                 <div class="logo">
-                    <!-- ngIf: srcLogo --><img ng-if="srcLogo" ng-src="./images/logo.png" alt="Norali - logotipo" src="./images/logo.png">
-                    <!-- end ngIf: srcLogo -->
+                    <img ng-if="srcLogo" ng-src="./images/logo.png" alt="Norali - logotipo" src="./images/logo.png">
                 </div>
                 <ul class="list_lenguages">
-                    <!-- ngRepeat: item in lenguajes -->
-                    <li ng-repeat="item in lenguajes" ng-click="changeLanguage(item.value)" class="ng-binding ng-scope">{{item.value}}</li>
-                    <!-- end ngRepeat: item in lenguajes -->
+                    <li ng-repeat="item in lenguajes" ng-click="changeLanguage(item.value)" class="">{{item.value}}</li>
                 </ul>
             </div>
             <div ng-class="{'gauss':login}" class="slide">
                 <div class="content_slide">
-                    <p class="ng-binding">{{ 'greeting' | translate }}!</p>
+                    <p>{{ 'titulo' | translate }}</p>
                     <ul>
                         <li>
-                            <p class="ng-binding">This is my personal web-page. For the only purpose of showing you a little bit of my world, and the things that I’m passionate about. By the way, I’m a 25 year-old designer, living in Buenos Aires, Argentina.</p>
+                            <p>{{ 'parrafo1' | translate }}</p>
                         </li>
                         <li>
-                            <p class="ng-binding">Nice to have you here!</p>
+                            <p>{{ 'parrafo2' | translate }}</p>
                         </li>
                         <li>
-                            <p class="ng-binding">Take a look around :)</p>
+                            <p>{{ 'parrafo3' | translate }}</p>
                         </li>
                     </ul>
                 </div>
@@ -112,124 +75,128 @@
             </div>
             <div id="design" class="portfolio">
                 <div class="header_portfolio">
-                    <h2 class="ng-binding">design</h2>
-                    <!-- ngRepeat: item in habilidades -->
-                    <div ng-repeat="item in habilidades" class="jobs ng-scope">
-                        <!-- ngIf: $index%2==0 -->
-                        <div ng-if="$index%2==0" class="job_box_image ng-scope">
-                            <!-- ngIf: item.srcImgMini --><img ng-if="item.srcImgMini" ng-src="../images/j1.jpg" alt="" ng-click="openComponentModal(item)" src="../images/j1.jpg">
-                            <!-- end ngIf: item.srcImgMini -->
+                    <h2>{{'seccion1' | translate}}</h2>
+                    <div class="jobs">
+                        <div class="job_box_image">
+                            <img alt="" ng-click="openComponentModal('images/manual_github.png')" src="images/portfolio_1.png">
                         </div>
-                        <!-- end ngIf: $index%2==0 -->
                         <div class="job_box_content">
-                            <h3 class="ng-binding">Branding</h3>
-                            <p class="ng-binding">The integrity and crossorigin attributes are used for Subresource Integrity (SRI) checking. This allows browsers to ensure that resources hosted on third-party</p>
-                            <button type="button" ng-click="openComponentModal(item.srcImgBig)">More</button>
+                            <h3>{{'habilidad1' | translate}}</h3>
+                            <p>{{'habilidad1-contenido' | translate}}</p>
+                            <button type="button" ng-click="openComponentModal('images/manual_github.png')">{{ 'boton_mas' | translate }}</button>
                         </div>
-                        <!-- ngIf: $index%2!==0 -->
                     </div>
-                    <!-- end ngRepeat: item in habilidades -->
-                    <div ng-repeat="item in habilidades" class="jobs ng-scope">
-                        <!-- ngIf: $index%2==0 -->
+                    <div class="jobs">
                         <div class="job_box_content">
-                            <h3 class="ng-binding">Branding</h3>
-                            <p class="ng-binding">The integrity and crossorigin attributes are used for Subresource Integrity (SRI) checking. This allows browsers to ensure that resources hosted on third-party</p>
-                            <button type="button" ng-click="openComponentModal(item.srcImgBig)">More</button>
+                            <h3>{{'habilidad2' | translate}}</h3>
+                            <p>{{'habilidad2-contenido' | translate}}</p>
+                            <button type="button" ng-click="openComponentModal('images/TOKYOBLUES.png')">{{ 'boton_mas' | translate }}</button>
                         </div>
-                        <!-- ngIf: $index%2!==0 -->
-                        <div ng-if="$index%2!==0" class="job_box_image ng-scope">
-                            <!-- ngIf: item.srcImgMini --><img ng-if="item.srcImgMini" ng-src="../images/j1.jpg" alt="" ng-click="openComponentModal(item)" src="../images/j1.jpg">
-                            <!-- end ngIf: item.srcImgMini -->
+                        <div class="job_box_image">
+                            <img alt="" ng-click="openComponentModal('images/TOKYOBLUES.png')" src="images/portfolio_2.png">
                         </div>
-                        <!-- end ngIf: $index%2!==0 -->
                     </div>
-                    <!-- end ngRepeat: item in habilidades -->
-                    <div ng-repeat="item in habilidades" class="jobs ng-scope">
-                        <!-- ngIf: $index%2==0 -->
-                        <div ng-if="$index%2==0" class="job_box_image ng-scope">
-                            <!-- ngIf: item.srcImgMini --><img ng-if="item.srcImgMini" ng-src="../images/j1.jpg" alt="" ng-click="openComponentModal(item)" src="../images/j1.jpg">
-                            <!-- end ngIf: item.srcImgMini -->
+                    <div class="jobs">
+                        <div class="job_box_image">
+                            <img alt="" ng-click="openComponentModal('images/moire_portfolio.png')" src="images/portfolio_3.png">
                         </div>
-                        <!-- end ngIf: $index%2==0 -->
                         <div class="job_box_content">
-                            <h3 class="ng-binding">Branding</h3>
-                            <p class="ng-binding">The integrity and crossorigin attributes are used for Subresource Integrity (SRI) checking. This allows browsers to ensure that resources hosted on third-party</p>
-                            <button type="button" ng-click="openComponentModal(item.srcImgBig)">More</button>
+                            <h3>{{'habilidad3' | translate}}</h3>
+                            <p>{{'habilidad3-contenido' | translate}}</p>
+                            <button type="button" ng-click="openComponentModal('images/moire_portfolio.png')">{{ 'boton_mas' | translate }}</button>
                         </div>
-                        <!-- ngIf: $index%2!==0 -->
                     </div>
-                    <!-- end ngRepeat: item in habilidades -->
+                    <div class="jobs">
+                        <div class="job_box_content">
+                            <h3>{{'habilidad4' | translate}}</h3>
+                            <p>{{'habilidad4-contenido' | translate}}</p>
+                            <button type="button" ng-click="openComponentModal('images/guipiur_diseño.png')">{{ 'boton_mas' | translate }}</button>
+                        </div>
+                        <div class="job_box_image">
+                            <img alt="" ng-click="openComponentModal('images/guipiur_diseño.png')" src="images/portfolio_4.png">
+                        </div>
+                    </div>
                 </div>
             </div>
             <div class="photography">
                 <div class="header_photography">
-                    <h2 class="ng-binding">photography</h2>
-                    <button ng-click="openGallery()"><img ng-src="../images/galeria_landing.jpg" src="../images/galeria_landing.jpg"><span class="flotante ng-binding">view gallery					</span></button>
+                    <h2>{{'seccion3' | translate}}</h2>
+                    <button ng-click="openGallery()">
+                        <img ng-src="../images/galeria_landing.jpg" src="../images/galeria_landing.jpg">
+                        <span class="flotante ">{{ 'seccion3_descripcion' | translate}}</span>
+                    </button>
                 </div>
             </div>
             <div id="about" class="about">
                 <div class="header_about">
-                    <h2 class="ng-binding">about</h2>
+                    <h2>{{'seccion2' | translate}}</h2>
                     <div class="columns">
                         <div class="column">
-                            <!-- ngRepeat: item in about.columna_tipo1 -->
-                            <div ng-repeat="item in about.columna_tipo1" class="box_xx ng-scope">
-                                <h3 class="ng-binding">branding.</h3>
+
+                            <div class="box_xx">
+                                <h3>{{ 'about_columna1_titulo1' | translate}}</h3>
                                 <div class="sub_box_y">
-                                    <p class="ng-binding">This is my personal web-page. For the only purpose of showing you a little bit of my world, and the th</p>
+                                    <p>{{ 'about_columna1_parrafo1' | translate}}</p>
                                 </div>
                             </div>
-                            <!-- end ngRepeat: item in about.columna_tipo1 -->
-                            <div ng-repeat="item in about.columna_tipo1" class="box_xx ng-scope">
-                                <h3 class="ng-binding">What i do.</h3>
+
+                            <div class="box_xx">
+                                <h3>{{ 'about_columna1_titulo2' | translate}}</h3>
                                 <div class="sub_box_y">
-                                    <p class="ng-binding">This is my personal web-page. For the only purpose of showing you a little bit of my world, and the th</p>
+                                    <p>{{ 'about_columna1_parrafo2' | translate}}</p>
                                 </div>
                             </div>
-                            <!-- end ngRepeat: item in about.columna_tipo1 -->
+
                         </div>
                         <div class="column">
                             <div class="box_xx">
-                                <h3 class="ng-binding">estudios.</h3>
-                                <!-- ngRepeat: item in about.columna_tipo2.contenidos -->
-                                <div ng-repeat="item in about.columna_tipo2.contenidos" class="sub_box_y ng-scope">
-                                    <h4 class="ng-binding">2009-2013</h4>
-                                    <p class="institute ng-binding">Universidad Naciona de la Plata</p>
-                                    <p class="function ng-binding">Graphic Designer</p>
-                                    <p class="location ng-binding"></p>
+                                <h3>{{ 'about_columna2_titulo' | translate}}</h3>
+
+                                <div class="sub_box_y">
+                                    <h4>2009-2013</h4>
+                                    <p class="institute ">Universidad Naciona de la Plata</p>
+                                    <p class="function ">{{ 'about_columna2_titulo1' | translate}}</p>
+                                    <p class="location ">La Plata, Buenos Aires.</p>
                                 </div>
-                                <!-- end ngRepeat: item in about.columna_tipo2.contenidos -->
-                                <div ng-repeat="item in about.columna_tipo2.contenidos" class="sub_box_y ng-scope">
-                                    <h4 class="ng-binding">2009-2013</h4>
-                                    <p class="institute ng-binding">Universidad Naciona de la Plata</p>
-                                    <p class="function ng-binding">Graphic Designer</p>
-                                    <p class="location ng-binding"></p>
+
+                                <div class="sub_box_y">
+                                    <h4>{{ 'about_columna2_titulo2_duracion' | translate}}</h4>
+                                    <p class="institute ">Laura Chuburu Study.</p>
+                                    <p class="function ">{{ 'about_columna2_titulo2' | translate}}</p>
+                                    <p class="location ">La Plata, Buenos Aires.</p>
                                 </div>
-                                <!-- end ngRepeat: item in about.columna_tipo2.contenidos -->
-                                <div ng-repeat="item in about.columna_tipo2.contenidos" class="sub_box_y ng-scope">
-                                    <h4 class="ng-binding">2009-2013</h4>
-                                    <p class="institute ng-binding">Universidad Naciona de la Plata</p>
-                                    <p class="function ng-binding">Graphic Designer</p>
-                                    <p class="location ng-binding"></p>
+
+                                <div class="sub_box_y">
+                                    <h4>{{ 'about_columna2_titulo3_duracion' | translate}}</h4>
+                                    <p class="institute ">Synergia 3 Co-Working.</p>
+                                    <p class="function ">{{ 'about_columna2_titulo3' | translate}}</p>
+                                    <p class="location ">La Plata, Buenos Aires.</p>
                                 </div>
-                                <!-- end ngRepeat: item in about.columna_tipo2.contenidos -->
+
+                                <div class="sub_box_y">
+                                    <h4>{{ 'about_columna2_titulo4_duracion' | translate}}</h4>
+                                    <p class="institute ">"Espacio [ f ] fotografía.</p>
+                                    <p class="function ">{{ 'about_columna2_titulo4' | translate}}</p>
+                                    <p class="location ">La Plata, Buenos Aires.</p>
+                                </div>
+
                             </div>
                         </div>
                         <div class="column">
                             <div class="box_xx">
-                                <h3 class="ng-binding">experience.</h3>
+                                <h3>{{ 'about_columna3_titulo' | translate}}</h3>
                                 <div class="sub_box_y">
-                                    <!-- ngRepeat: item in about.columna_tipo3.contenidos -->
-                                    <div ng-repeat="item in about.columna_tipo3.contenidos">
-                                        <h4 class="ng-binding">2009-2013</h4>
-                                        <p class="ng-binding">Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno.</p>
+
+                                    <div>
+                                        <h4>{{ 'about_columna3_experiencia1_duracion' | translate}}</h4>
+                                        <p>{{ 'about_columna3_experiencia1_parrafo' | translate}}</p>
                                     </div>
-                                    <!-- end ngRepeat: item in about.columna_tipo3.contenidos -->
-                                    <div ng-repeat="item in about.columna_tipo3.contenidos">
-                                        <h4 class="ng-binding">2009-2013</h4>
-                                        <p class="ng-binding">Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno.</p>
+
+                                    <div>
+                                        <h4>{{ 'about_columna3_experiencia2_duracion' | translate}}</h4>
+                                        <p>{{ 'about_columna3_experiencia2_parrafo' | translate}}</p>
                                     </div>
-                                    <!-- end ngRepeat: item in about.columna_tipo3.contenidos -->
+
                                 </div>
                             </div>
                         </div>
@@ -237,7 +204,7 @@
                 </div>
             </div>
             <div id="contact" class="contact">
-                <h2 class="ng-binding">contact</h2>
+                <h2>contact</h2>
                 <form method="post" action="/" class="ng-pristine ng-valid">
                     <div class="form_group">
                         <label><span>Name</span>
@@ -270,7 +237,7 @@
                 </div>
             </div>
             <div id="footer">
-                <p>Norali Emilio - Designer &amp; photographer | 2017. Powered by <a href="#">CounterPic</a></p>
+                <p>Norali Emilio - Designer &amp; photographer | 2017. Powered by <a href="https://www.linkedin.com/in/daniel-pérez-01b90a4a"> Alex Perez</a></p>
             </div>
         </div>
     </div>

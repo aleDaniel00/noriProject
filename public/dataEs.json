@@ -8,62 +8,68 @@
             "value": "sp"
         }],
         "encabezados_secciones": [
-            { "value": "home" },
-            { "value": "design" },
-            { "value": "about" },
-            { "value": "photography" },
-            { "value": "contact" }
+            { "value": "Home" },
+            { "value": "Portfolio" },
+            { "value": "Acerca de" },
+            { "value": "Fotografía" },
+            { "value": "Contacto" }
         ],
         "anclas": [{
-            "value": "home",
-            "intro": "esta es una intro"
+            "value": "Home",
+            "intro": "Una pequeña introducción."
         }, {
-            "value": "design",
-            "intro": "esta es una intro"
+            "value": "Portfolio",
+            "intro": "Mi portfolio online."
         }, {
-            "value": "about",
-            "intro": "esta es una intro"
+            "value": "Fotografía",
+            "intro": "Serie de fotografías que saqué."
         }, {
-            "value": "photography",
-            "intro": "esta es una intro"
+            "value": "Acerca de",
+            "intro": "Mi currículum online. Trabajo & estudios."
         }, {
-            "value": "contact",
-            "intro": "esta es una intro"
+            "value": "Contacto",
+            "intro": "Hablemos!"
         }],
         "intro": [{
             "fondo": "./images/..",
-            "titulo": "hi",
+            "titulo": "hola!",
             "parrafos": [{
-                "parrafo1": "This is my personal web-page. For the only purpose of showing you a little bit of my world, and the things that I’m passionate about. By the way, I’m a 25 year-old designer, living in Buenos Aires, Argentina.",
-                "parrafo2": "Nice to have you here!",
-                "parrafo3": "Take a look around :)"
+                "parrafo1": "Ésta es mi página web. Con el propósito de que conozcas un poco de mí, y de las cosas que me apasionan. Para empezar, soy una Diseñadora de 26 años viviendo en Buenos Aires, Argentina.",
+                "parrafo2": "Gracias por visitarme!",
+                "parrafo3": "Echá un vistazo :)"
             }]
         }],
         "secciones": [{
-            "diseño": {
+            "disenio": {
                 "habilidades": [{
-                        "titulo": "Branding",
-                        "contenido": "The integrity and crossorigin attributes are used for Subresource Integrity (SRI) checking. This allows browsers to ensure that resources hosted on third-party",
-                        "srcImgMini": "../images/j1.jpg",
-                        "srcImgBig": "../images/j1big.png"
+                        "titulo": "UX/UI",
+                        "contenido": "Diseño UX/UI de una plataforma online llamada “Favogit”, la cual permite encontrar a tus Githubers favoritos y añadirlos a tu lista.",
+                        "srcImgMini": "../images/portfolio_1.jpg",
+                        "srcImgBig": "../images/manual_github.png"
+                    },
+                    {
+                        "titulo": "UX/UI",
+                        "contenido": "Diseño de una landing page para un curso de UX. Es una marca inventada llamada “Tokyo Blues”. Desarrollé la página principal, la cual incluye un carrito de compras.",
+                        "srcImgMini": "../images/portfolio_2.jpg",
+                        "srcImgBig": "../images/TOKYOBLUES.png"
+                    },
+                    {
+                        "titulo": "Diseño Web",
+                        "contenido": "Proyecto de agencia creativa de diseño, Moiré Labs. Diseño de identidad, diseño de landing page con portfolio de trabajos (en proceso).",
+                        "srcImgMini": "../images/portfolio_3.jpg",
+                        "srcImgBig": "../images/moire_portfolio.png"
                     },
                     {
                         "titulo": "Branding",
-                        "contenido": "The integrity and crossorigin attributes are used for Subresource Integrity (SRI) checking. This allows browsers to ensure that resources hosted on third-party",
-                        "srcImgMini": "../images/j1.jpg",
-                        "srcImgBig": "../images/j1big.png"
-                    },
-                    {
-                        "titulo": "Branding",
-                        "contenido": "The integrity and crossorigin attributes are used for Subresource Integrity (SRI) checking. This allows browsers to ensure that resources hosted on third-party",
-                        "srcImgMini": "../images/j1.jpg",
-                        "srcImgBig": "../images/j1big.png"
+                        "contenido": "Diseño de logo e identidad para una marca de Lencería de La Plata, Bs. As. Mezclé elementos femeninos con colores pastel, resultando en una gráfica delicada.",
+                        "srcImgMini": "../images/portfolio_4.jpg",
+                        "srcImgBig": "../images/guipiur_diseño.png"
                     }
                 ],
-                "boton_mas": "more"
+                "boton_mas": "más"
             },
             "photography": {
-                "descripcion": "view gallery",
+                "descripcion": "Ver galería",
                 "src_fondo": "../images/galeria_landing.jpg",
                 "gallery": [{
                         "src": "../images/gallery/galeria_1.jpg",
@@ -81,45 +87,51 @@
             },
             "about": {
                 "columna_tipo1": [{
-                    "titulo": "branding.",
-                    "parrafo": "This is my personal web-page. For the only purpose of showing you a little bit of my world, and the th"
+                    "titulo": "Sobre mí.",
+                    "parrafo": "Mi nombre es Noralí Nayla Emilio, y soy Diseñadora Gráfica. Estudié en la U.N.L.P. (Universidad Nacional de La Plata) en 2013. Desde ese año, trabajé como freelance y en agencias."
                 }, {
-                    "titulo": "What i do.",
-                    "parrafo": "This is my personal web-page. For the only purpose of showing you a little bit of my world, and the th"
+                    "titulo": "Qué hago.",
+                    "parrafo": "Me encanta trabajar en proyectos web y de aplicaciones, orientados al diseño UX y UI. Soy fanática de lo estético y de comunicar lo que el cliente desee. Además, soy una fotógrafa amateur."
                 }],
                 "columna_tipo2": {
                     "contenidos": [{
                             "duracion": "2009-2013",
-                            "institucion": "Universidad Naciona de la Plata",
-                            "titulo": "Graphic Designer",
-                            "parrrafo3": "La Plata Buenos Aires"
+                            "institucion": "Universidad Nacional de la Plata.",
+                            "titulo": "Diseñadora en Comunicación Visual.",
+                            "parrrafo3": "La Plata, Buenos Aires."
                         },
                         {
-                            "duracion": "2009-2013",
-                            "institucion": "Universidad Naciona de la Plata",
-                            "titulo": "Graphic Designer",
-                            "parrrafo3": "La Plata Buenos Aires"
+                            "duracion": "2013 (3 meses)",
+                            "institucion": "Estudio Laura Chuburu.",
+                            "titulo": "Diseño Web (HTML5/CSS3).",
+                            "parrrafo3": "La Plata, Buenos Aires."
                         },
                         {
-                            "duracion": "2009-2013",
-                            "institucion": "Universidad Naciona de la Plata",
-                            "titulo": "Graphic Designer",
-                            "parrrafo3": "La Plata Buenos Aires"
+                            "duracion": "2015 (2 meses)",
+                            "institucion": "Synergia 3 Co-Working.",
+                            "titulo": "Community Management.",
+                            "parrrafo3": "La Plata, Buenos Aires."
+                        },
+                        {
+                            "duracion": "2016–2017 (1 año).",
+                            "institucion": "Espacio [ f ] fotografía.",
+                            "titulo": "Curso de fotografía",
+                            "parrrafo3": "La Plata, Buenos Aires."
                         }
                     ],
-                    "titulo": "estudios"
+                    "titulo": "Estudios."
                 },
                 "columna_tipo3": {
                     "contenidos": [{
-                            "duracion": "2009-2013",
-                            "parrafo": "Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno."
+                            "duracion": "Noviembre 2015 – Agosto 2017 (1 year, 9 months).",
+                            "parrafo": "Agencia Digital EGO. Me desenvuelvo en proyectos para el Banco Santander Río, centrándome en el diseño de diferentes plataformas pensadas para los empleados."
                         },
                         {
-                            "duracion": "2009-2013",
-                            "parrafo": "Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno."
+                            "duracion": "2013 - Actual.",
+                            "parrafo": "Diseñadora freelance. Proyectos de diseño web y branding principalmente."
                         }
                     ],
-                    "titulo": "experience"
+                    "titulo": "Experiencia."
                 }
             }
 

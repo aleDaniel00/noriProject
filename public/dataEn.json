@@ -8,27 +8,27 @@
             "value": "sp"
         }],
         "encabezados_secciones": [
-            { "value": "home" },
-            { "value": "design" },
-            { "value": "about" },
-            { "value": "photography" },
-            { "value": "contact" }
+            { "value": "Home" },
+            { "value": "Portfolio" },
+            { "value": "About" },
+            { "value": "Photography" },
+            { "value": "Contact" }
         ],
         "anclas": [{
-            "value": "home",
-            "intro": "esta es una intro"
+            "value": "Home",
+            "intro": "A little introduction about myself."
         }, {
-            "value": "design",
-            "intro": "esta es una intro"
+            "value": "Portfolio",
+            "intro": "My online portfolio."
         }, {
             "value": "about",
-            "intro": "esta es una intro"
+            "intro": "My online resume. Work & studies."
         }, {
             "value": "photography",
-            "intro": "esta es una intro"
+            "intro": "A series of photographs I’ve taken."
         }, {
             "value": "contact",
-            "intro": "esta es una intro"
+            "intro": "Get in touch!."
         }],
         "intro": [{
             "fondo": "./images/..",
@@ -40,30 +40,36 @@
             }]
         }],
         "secciones": [{
-            "diseño": {
+            "disenio": {
                 "habilidades": [{
-                        "titulo": "Branding",
-                        "contenido": "The integrity and crossorigin attributes are used for Subresource Integrity (SRI) checking. This allows browsers to ensure that resources hosted on third-party",
-                        "srcImgMini": "../images/j1.jpg",
-                        "srcImgBig": "../images/j1big.png"
+                        "titulo": "UX/UI",
+                        "contenido": "UX/UI design of an online platform called “Favogit”, which allows you to find your favorite Githubers, and add them on your favorite list as well.",
+                        "srcImgMini": "../images/portfolio_1.jpg",
+                        "srcImgBig": "../images/manual_github.png"
+                    },
+                    {
+                        "titulo": "UX/UI",
+                        "contenido": "Design of a landing page for a UX course. It is an imaginarious brand called “Tokyo Blues”. I designed the landing page, wich included a shopping cart.",
+                        "srcImgMini": "../images/portfolio_2.jpg",
+                        "srcImgBig": "../images/TOKYOBLUES.png"
+                    },
+                    {
+                        "titulo": "Web Design",
+                        "contenido": "A creative digital agency project, called Moiré Labs. Identity design, and landing page with a portfolio of works.",
+                        "srcImgMini": "../images/portfolio_3.jpg",
+                        "srcImgBig": "../images/moire_portfolio.png"
                     },
                     {
                         "titulo": "Branding",
-                        "contenido": "The integrity and crossorigin attributes are used for Subresource Integrity (SRI) checking. This allows browsers to ensure that resources hosted on third-party",
-                        "srcImgMini": "../images/j1.jpg",
-                        "srcImgBig": "../images/j1big.png"
-                    },
-                    {
-                        "titulo": "Branding",
-                        "contenido": "The integrity and crossorigin attributes are used for Subresource Integrity (SRI) checking. This allows browsers to ensure that resources hosted on third-party",
-                        "srcImgMini": "../images/j1.jpg",
-                        "srcImgBig": "../images/j1big.png"
+                        "contenido": "Logo design for a lingerie brand from La Plata, Buenos Aires. I mixed feminine elements with pastel colors, to bring up delicate visual elements.",
+                        "srcImgMini": "../images/portfolio_4.jpg",
+                        "srcImgBig": "../images/guipiur_diseño.png"
                     }
                 ],
                 "boton_mas": "more"
             },
             "photography": {
-                "descripcion": "view gallery",
+                "descripcion": "View gallery",
                 "src_fondo": "../images/galeria_landing.jpg",
                 "gallery": [{
                         "src": "../images/gallery/galeria_1.jpg",
@@ -81,45 +87,51 @@
             },
             "about": {
                 "columna_tipo1": [{
-                    "titulo": "branding.",
-                    "parrafo": "This is my personal web-page. For the only purpose of showing you a little bit of my world, and the th"
+                    "titulo": "About me.",
+                    "parrafo": "My name is Noralí Nayla Emilio, and I'm a Graphic Designer. I graduated in U.N.L.P. (Universidad Nacional de La Plata) in 2013. Since then, I've been working as a freelancer and in agencies."
                 }, {
                     "titulo": "What i do.",
-                    "parrafo": "This is my personal web-page. For the only purpose of showing you a little bit of my world, and the th"
+                    "parrafo": "I love to work on UX and UI projects, everything that goes from web to apps. I'm a fan of aestethics and communicating what the client wants. Also, I'm an amateur photographer. It is still a new world for me, but I find it fascinating :)"
                 }],
                 "columna_tipo2": {
                     "contenidos": [{
                             "duracion": "2009-2013",
-                            "institucion": "Universidad Naciona de la Plata",
-                            "titulo": "Graphic Designer",
-                            "parrrafo3": "La Plata Buenos Aires"
+                            "institucion": "Universidad Nacional de la Plata.",
+                            "titulo": "Graphic Designer.",
+                            "parrrafo3": "La Plata, Buenos Aires."
                         },
                         {
-                            "duracion": "2009-2013",
-                            "institucion": "Universidad Naciona de la Plata",
-                            "titulo": "Graphic Designer",
-                            "parrrafo3": "La Plata Buenos Aires"
+                            "duracion": "2013 (3 months)",
+                            "institucion": "Laura Chuburu Study.",
+                            "titulo": "Web Design course (HTML5/CSS3).",
+                            "parrrafo3": "La Plata, Buenos Aires."
                         },
                         {
-                            "duracion": "2009-2013",
-                            "institucion": "Universidad Naciona de la Plata",
-                            "titulo": "Graphic Designer",
-                            "parrrafo3": "La Plata Buenos Aires"
+                            "duracion": "2015 (2 months)",
+                            "institucion": "Synergia 3 Co-Working.",
+                            "titulo": "Community Management.",
+                            "parrrafo3": "La Plata, Buenos Aires."
+                        },
+                        {
+                            "duracion": "2016–2017 (1 year)",
+                            "institucion": "Espacio [ f ] fotografía.",
+                            "titulo": "Photography Course.",
+                            "parrrafo3": "La Plata, Buenos Aires."
                         }
                     ],
-                    "titulo": "estudios"
+                    "titulo": "Studies."
                 },
                 "columna_tipo3": {
                     "contenidos": [{
-                            "duracion": "2009-2013",
-                            "parrafo": "Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno."
+                            "duracion": "November 2015 – August 2017 (1 year, 9 months)",
+                            "parrafo": "EGO Digital Agency. I was involved in a number of projects for Santander Rio Bank, focusing on the UI design of platforms for employees."
                         },
                         {
-                            "duracion": "2009-2013",
-                            "parrafo": "Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno."
+                            "duracion": "2013 – Today",
+                            "parrafo": "Working as a freelance Designer. I've been involved in Branding projects, Web Design and Community Management."
                         }
                     ],
-                    "titulo": "experience"
+                    "titulo": "Experience."
                 }
             }
 
